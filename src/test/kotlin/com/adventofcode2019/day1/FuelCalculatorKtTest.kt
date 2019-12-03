@@ -41,4 +41,39 @@ internal class FuelCalculatorKtTest {
 
         assertEquals(3423279, total)
     }
+
+    @Test
+    fun calculateFuelTakingMassOfFuelIntoAccount() {
+        assertEquals(
+            2,
+            calculateFuelTakingMassOfFuelIntoAccount(12)
+        )
+        assertEquals(
+            2,
+            calculateFuelTakingMassOfFuelIntoAccount(14)
+        )
+        assertEquals(
+            966,
+            calculateFuelTakingMassOfFuelIntoAccount(1969)
+        )
+        assertEquals(
+            50346,
+            calculateFuelTakingMassOfFuelIntoAccount(100756)
+        )
+    }
+
+    @Test
+    fun calculateFuelForJourneyTakingMassOfFuelIntoAccount(){
+        var total = 0
+        val text = this::class.java.classLoader.getResource("day1.txt").readText()
+        val lines = text.split('\n')
+        for (line in lines){
+            val mass = line.trim().toInt()
+            val fuel = calculateFuelTakingMassOfFuelIntoAccount(mass)
+            total += fuel
+        }
+        //println(total)
+
+        assertEquals(5132018, total)
+    }
 }
