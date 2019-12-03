@@ -2,18 +2,19 @@ package com.adventofcode2019.day2
 
 fun intCode(input: IntArray): IntArray {
     var index = 0
-    while (input[index] != 99){
-        when(input[index]){
+    var output =  input.clone()
+    while (output[index] != 99){
+        when(output[index]){
             1 -> {
-                input[input[index+3]] = input[input[index+1]] + input[input[index+2]]
+                output[output[index+3]] = output[output[index+1]] + output[output[index+2]]
                 index += 4
             }
             2 -> {
-                input[input[index+3]] = input[input[index+1]] * input[input[index+2]]
+                output[output[index+3]] = output[output[index+1]] * output[output[index+2]]
                 index += 4
             }
 
         }
     }
-    return input
+    return output
 }
