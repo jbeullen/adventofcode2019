@@ -5,7 +5,7 @@ import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.Assertions.*
 import java.net.URL
 
-internal class FuelCalculatorKtTest {
+internal class FuelCalculatorTest {
 
     @Test
     fun calculateFuelForModule() {
